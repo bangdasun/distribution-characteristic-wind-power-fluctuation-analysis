@@ -9,6 +9,18 @@ setwd("C://Users//Bangda//Desktop//project-power")
 raw_data = read.csv("powerdata.csv", skip = 1)
 raw_data[1:10, 1:12]
 
+#   To store conveniently, split into 4 parts. To combine them together:
+subdata1 = powerdata[, 1:5]
+subdata2 = powerdata[, 6:10]
+subdata3 = powerdata[, 11:15]
+subdata4 = powerdata[, 16:20]
+write.csv(subdata1, "subdata1.csv")
+write.csv(subdata1, "subdata2.csv")
+write.csv(subdata1, "subdata3.csv")
+write.csv(subdata1, "subdata4.csv")
+# read into environment ->
+powerdata = cbind(subdata1, subdata2, subdata3, subdata4)
+
 ### Data Cleaning ###
 # We try to convert the data into tidy data form
 
